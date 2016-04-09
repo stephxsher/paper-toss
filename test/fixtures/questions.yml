@@ -15,8 +15,78 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+Q1: 
+  text: What is your dream weekend scenario? 
+  subject: personal
+
+Q2:
+   text:  Where were you when you were 19 years old?
+   subject: personal
+
+Q3:
+  text: What is your favorite place in the world? 
+  subject: personal
+
+Q4:
+  text: What is in your bucket list? 
+  subject : personal
+
+Q5:
+  text:  What is your passion outside your career? 
+  subject: personal
+
+Q6:
+  text:  Who is your role model? 
+  subject: personal
+
+Q7:
+  text:  What is your favorite movie? 
+  subject: personal
+
+Q8:
+  text:  What relaxes you? 
+  subject: perspnal
+
+Q9:
+  text:  What do you do when you first get up in the morning? 
+  subject: personal
+
+Q10:
+  text:  What do you want for your next birthday gift? 
+  subject: personal
+
+Q11:
+  text:  If you can be anyone, who do you want to be and why? 
+  subject: personal
+
+Q12:
+  text:  What is the recent challenge that you faced at work? 
+  subject: professional
+
+Q13:
+  text:  What motivates you at work? 
+  subject: professional
+
+Q14:
+  text:  What is your goal of this week? 
+  subject: professional
+
+Q15:
+  text:  What is your current project? 
+  subject: professional
+
+Q16:
+  text:  What is your favorite part of the day at work? 
+  subject: professional 
+
+Q17:
+  text:  What do you for your productivity at work? 
+  subject: professional 
+
+Q18:
+  text:  What can help you to be more productive? 
+  subject: professional 
+
+
+
+
