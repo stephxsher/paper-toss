@@ -4,12 +4,21 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   around_action :set_time_zone, if: :current_user
 
-private
 
-  def set_time_zone(&block)
-  Time.use_zone(current_user.time_zone, &block)
+
+# Users time zone
+  # private
+
+  # def set_time_zone(&block)
+  # Time.use_zone(current_user.time_zone, &block)
+  # end
+
+  protected
+  
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :phone]
+    devise_parameter_sanitizer.for(:sign_in) << [:first_name, :last_name, :phone]
+    devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :phone]
   end
-
-
 
 end
