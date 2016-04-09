@@ -17,9 +17,11 @@
 #  updated_at             :datetime         not null
 #  first_name             :string
 #  last_name              :string
-#  location               :string
 #  hire_date              :datetime
 #  position               :string
+#  karma                  :integer
+#  location_id            :integer
+#  time_zone              :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

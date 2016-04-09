@@ -29,7 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'devise'
-
+# ruby timezone gem
+gem 'tzinfo'
 gem 'annotate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -38,7 +39,7 @@ gem 'thin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
 end
 
 group :development do

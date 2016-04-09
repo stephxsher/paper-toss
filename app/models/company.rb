@@ -11,4 +11,6 @@
 class Company < ActiveRecord::Base
   has_many :locations
   has_many :users, through: :locations
+
+  accepts_nested_attributes_for :locations
 end
