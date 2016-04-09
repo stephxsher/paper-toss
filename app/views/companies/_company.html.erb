@@ -1,0 +1,8 @@
+<h1><%= company.name %></h1>
+<ul>
+  <% company.locations.each do |location| %>
+    <%= link_to company_location_path(company, location) do %>
+      <li><%= location.name %></li>
+    <% end %>
+  <% end %>
+</ul>
