@@ -15,6 +15,11 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  first_name             :string
+#  last_name              :string
+#  location               :string
+#  hire_date              :datetime
+#  position               :string
 #
 
 class User < ActiveRecord::Base
