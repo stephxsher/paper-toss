@@ -1,6 +1,8 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ 
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -17,14 +19,10 @@
       <%= f.label :remember_me %>
     </div>
   <% end -%>
-  
-   <div class ="field">
-   <%= f.input :time_zone, label: 'My time zone' %>
-  </div>
 
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "devise/shared/links" %>
