@@ -1,7 +1,22 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'pages#home'
+  # root 'pages#home'
+
+  authenticated :user do
+    root 'users#index'
+  end
+
+  unauthenticated :user do
+    devise_scope :user do
+      get "/" => "devise/sessions#new"
+    end
+  end
+
+  resources :conversations do
+    resources :messages
+  end
+
   resources :locations
   resources :companies
   # The priority is based upon order of creation: first created -> highest priority.
