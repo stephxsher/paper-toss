@@ -14,7 +14,7 @@ Shirley Berry
 email here
 
 Greta Moseson
-email here.
+gmoseson@gmail.com
 
 Nami 
 email here. 
