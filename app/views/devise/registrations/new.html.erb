@@ -5,7 +5,11 @@
 
   <div class="field">
     <%= f.label :first_name %><br />
+<<<<<<< HEAD:app/views/users/registrations/new.html.erb
     <%= f.text_field :first_name %>
+=======
+    <%= f.text_field :first_name, autofocus: true %>
+>>>>>>> c89c0586fbfad246502599fa522ddafc297f65bd:app/views/devise/registrations/new.html.erb
   </div>
 
   <div class="field">
@@ -26,13 +30,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class ="field">
-   <%= f.input :time_zone, label: 'My time zone' %>
-  </div>
-
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+
