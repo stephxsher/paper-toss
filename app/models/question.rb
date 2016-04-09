@@ -10,4 +10,6 @@
 #
 
 class Question < ActiveRecord::Base
+  has_many :conversation_questions
+  has_many :converations, through: :conversation_questions
 end
