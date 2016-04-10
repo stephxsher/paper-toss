@@ -14,10 +14,11 @@
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
-
-    <div class="field">
- 
-    </div>
+  
+  <div class="field">
+    <%= f.label :time_zone %>
+    <%= f.time_zone_select :time_zone %>
+  </div> 
  
 
   <div class="actions">
