@@ -1,0 +1,8 @@
+<% publish_to @path do %>
+    var id = "<%= @conversation.id %>";
+    var chatbox = $("#chatbox_" + id + " .chatboxcontent");
+    chatbox.append("<%= j render( partial: @question ) %>");
+    chatbox.scrollTop(chatbox[0].scrollHeight);
+
+
+<% end %>

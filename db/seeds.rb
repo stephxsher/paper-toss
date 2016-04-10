@@ -55,8 +55,8 @@ profesh.each do |q|
 end
 
 
-Conversation.all.each do |convo|
-  convo.questions << Question.all.where(subject:"personal").sample
-  convo.questions << Question.all.where(subject:"professional").sample
-end
+# Conversation.all.each do |convo|
+#   convo.questions << Question.all.where(subject:"personal").sample
+#   convo.questions << Question.all.where(subject:"professional").sample
+# end
 

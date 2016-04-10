@@ -17,6 +17,8 @@ class ConversationsController < ApplicationController
     @reciever = interlocutor(@conversation)
     @messages = @conversation.messages
     @message = Message.new
+    unsorted_contents = @conversation.conversation_questions + @conversation.messages
+    @contents = unsorted_contents.sort_by(&:created_at).map{|content| content.class == ConversationQuestion ? content.question : content}
   end
 
   private
