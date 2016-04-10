@@ -19,3 +19,7 @@ shirleylberry@gmail.com
 
 Greta Moseson
 gmoseson@gmail.com
+
+#Credits
+Real-time chat app based on: https://github.com/Joseph-N/chatty
+Paper Airplane Animation (CSS): http://codepen.io/ItsJonQ/pen/yvfDF
