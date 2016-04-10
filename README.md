@@ -3,20 +3,19 @@ A company-wide chat roulette.
 
 #Collaborators 
 Stephanie Sher
-
-Liz Kalina 
-lizkalina@gmail.com
+stephaniesher18@gmail.com
 
 Holly Peck 
 holly.m.peck@gmail.com
 
-Shirley Berry 
-email here
+Liz Kalina
+liz.kalina@gmail.com
+
+So-young Nam
+soyongnam@gmail.com
+
+Shirley Berry
+shirleylberry@gmail.com
 
 Greta Moseson
 gmoseson@gmail.com
-
-Nami 
-email here. 
-
-#Technology Used

@@ -21,7 +21,7 @@
 #  position               :string
 #  karma                  :integer
 #  location_id            :integer
-#  time_zone              :string       
+#  time_zone              :string
 #
 
 class User < ActiveRecord::Base
@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :location
+  has_one :company, through: :location
 
   has_many :conversations, :foreign_key => :sender_id
 end

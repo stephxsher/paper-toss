@@ -6,6 +6,13 @@ var ready = function () {
      * recipient_id
      */
 
+    $("#myModal").modal("show");
+
+    window.setTimeout(function() {
+        $("#myModal").modal("hide");
+        $('.start-conversation').click();
+    }, 4000);
+
     $('.start-conversation').click(function (e) {
         e.preventDefault();
 

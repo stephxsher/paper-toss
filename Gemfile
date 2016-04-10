@@ -28,10 +28,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+
 gem 'devise'
+
 # ruby timezone gem
 gem 'tzinfo'
 gem 'annotate'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'private_pub'
@@ -40,6 +43,10 @@ gem 'thin'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
+  gem 'byebug'
+  gem 'faker'
+  gem 'populator'
+
 end
 
 group :development do
