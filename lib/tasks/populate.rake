@@ -26,7 +26,7 @@ namespace :db do
           user.hire_date = Time.now - i.years
           user.karma = rand(1..50)
           user.time_zone = ["UTC", "GMT", "AEST"][w]
-          user.position = ["Sales", "IT", "HR", "Finance", "Business Development", "Marketing"][i%6]
+          user.department = ["Sales", "IT", "HR", "Finance", "Business Development", "Marketing"][i%6]
            
         end
       end
