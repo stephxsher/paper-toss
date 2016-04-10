@@ -1,6 +1,10 @@
 html,
 body {
-  background-color: #85b9dd !important;
+  background-image: url(crumpled-paper.jpg); no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   margin: 0;
   padding: 0;
   width: 100%;

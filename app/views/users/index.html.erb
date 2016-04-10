@@ -73,17 +73,11 @@ S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Welcome, <%= current_user.first_name %></h4>
-      </div>
       <div class="modal-body">
-        <p>You've been paired with <%= @convo.recipient.first_name %>!</p>
-        <p>She works in <%= @convo.recipient.department %></p>
-        <p>Office: <%= @convo.recipient.location.name %></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <h1>Welcome, <%= current_user.first_name %></h1>
+        <h2>You've been paired with <%= @convo.recipient.first_name %>!</h2>
+        <h3>She works in <%= @convo.recipient.department %></h3>
+        <h3>Office: <%= @convo.recipient.location.name %></h3>
       </div>
     </div>
 

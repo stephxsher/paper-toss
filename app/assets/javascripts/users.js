@@ -11,21 +11,22 @@ var ready = function () {
     }, 2000);
 
     window.setTimeout(function() {
-        $("#myModal").modal("hide");
-        $('.plane-container').fadeOut(1000);
+        $("#myModal").fadeOut(600);
+        $('.plane-container').fadeOut(600);
+        $('.clouds').fadeOut(600);
         $('.start-conversation').click();
-    }, 5000);
+    }, 8000);
 
     $('.start-conversation').click(function (e) {
         e.preventDefault();
 
         var sender_id = $(this).data('sid');
         var recipient_id = $(this).data('rip');
-
+        window.setTimeout(function() {
         $.post("/conversations", { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
             chatBox.chatWith(data.conversation_id);
         });
-
+    }, 1500);
         
     });
 
