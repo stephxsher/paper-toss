@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  text       :string
-#  type       :string
+#  subject    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

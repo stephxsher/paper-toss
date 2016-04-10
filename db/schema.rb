@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20160409220244) do
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "hire_date"
-    t.string   "position"
+    t.string   "department"
     t.integer  "karma"
     t.integer  "location_id"
     t.string   "time_zone"
