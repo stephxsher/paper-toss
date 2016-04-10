@@ -40,15 +40,6 @@ var ready = function () {
         },
 
         /**
-         * Plays a notification sound when a new chat message arrives
-         */
-
-        notify: function () {
-            var audioplayer = $('#chatAudio')[0];
-            audioplayer.play();
-        },
-
-        /**
          * Handles 'smart layouts' of the chatboxes. Like when new chatboxes are
          * added or removed from the view, it restructures them so that they appear
          * neatly aligned on the page

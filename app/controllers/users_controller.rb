@@ -9,5 +9,9 @@ class UsersController < ApplicationController
       @match = (User.all - [current_user]).sample
       @convo = current_user.conversations.build(recipient_id:@match.id)
   end
+
+  def show 
+
+  end
 end
 
