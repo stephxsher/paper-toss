@@ -6,6 +6,7 @@ var ready = function () {
      * recipient_id
      */
      $('.throw-question').hide();
+     $('#match_info').hide();
 
     window.setTimeout(function() {
         $("#myModal").modal("show");
@@ -18,6 +19,7 @@ var ready = function () {
         $('.start-conversation').click();
         window.setTimeout(function() {
         $('.throw-question').fadeIn(100);
+        $('#match_info').fadeIn(100);
         }, 1500);
     }, 8000);
 
