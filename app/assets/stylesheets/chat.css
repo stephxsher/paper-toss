@@ -18,7 +18,7 @@
     color: white;
     padding: 0.5rem;
     overflow: hidden;
-
+    display: none;
     border-right: 1px solid rgba(85, 85, 85, 0.87);
     border-left: 1px solid rgba(85, 85, 85, 0.87);
 }
@@ -27,6 +27,7 @@
     display: inline;
     font-size: 17px;
     font-weight: 700;
+
 }
 
 .chatboxblink {

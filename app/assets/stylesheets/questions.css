@@ -2,10 +2,13 @@
   background-color: pink;
 }
 
-.throw-question {
+.btn.throw-question {
     position: fixed;
     bottom: 100px;
-    right: 75px;
-    width: 400px;
+    right: 10%;
+    width: 40%;
     height: 50px;
+    display: hidden;
+    font-size: 24px;
+    padding-top: 6px;
 }

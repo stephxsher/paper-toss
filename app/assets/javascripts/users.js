@@ -5,6 +5,7 @@ var ready = function () {
      * send an ajax request to our rails app with the sender_id and
      * recipient_id
      */
+     $('.throw-question').hide();
 
     window.setTimeout(function() {
         $("#myModal").modal("show");
@@ -15,6 +16,9 @@ var ready = function () {
         $('.plane-container').fadeOut(600);
         $('.clouds').fadeOut(600);
         $('.start-conversation').click();
+        window.setTimeout(function() {
+        $('.throw-question').fadeIn(100);
+        }, 1500);
     }, 8000);
 
     $('.start-conversation').click(function (e) {
