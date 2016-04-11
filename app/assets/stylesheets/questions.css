@@ -1,7 +1,11 @@
 .question-text {
-  
+  background-color: pink;
 }
 
 .throw-question {
-
+    position: fixed;
+    bottom: 100px;
+    right: 75px;
+    width: 400px;
+    height: 50px;
 }

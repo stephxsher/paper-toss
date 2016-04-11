@@ -12,9 +12,9 @@
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, autofocus: true %>
   </div>
-    <div class="field">
-    <%= f.label :position %><br />
-    <%= f.text_field :position, autofocus: true %>
+  <div class="field">
+    <%= f.label :department %><br />
+    <%= f.text_field :department, autofocus: true %>
   </div>
 
   <div class="field">
@@ -34,6 +34,11 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :time_zone %>
+    <%= f.time_zone_select :time_zone %>
+  </div> 
 
   <div class="actions"><br />
     <%= f.submit "Sign up" %>

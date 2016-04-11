@@ -67,7 +67,7 @@ S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715
 
 
 <!-- Trigger the modal with a button -->
-<button type="button" class="pull-right btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">About <%= @match.first_name %></button>
+<button type="button" class="pull-right btn btn-info btn-lg hidden" data-toggle="modal" data-target="#myModal">About <%= @match.first_name %></button>
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -76,10 +76,7 @@ S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <h1>Welcome, <%= current_user.first_name %></h1>
-        <h2>You've been paired with <%= @convo.recipient.first_name %>!</h2>
-        <h3>She works in <%= @convo.recipient.department %></h3>
-        <h3>Office: <%= @convo.recipient.location.name %></h3>
+        <h1>Welcome, <%= current_user.first_name %>! <br> You're paired with <%= @convo.recipient.name_w_initial %>.</h2>
       </div>
     </div>
 

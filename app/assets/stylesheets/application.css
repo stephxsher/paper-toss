@@ -22,6 +22,12 @@ html {
   background-size: cover;
 }
 
+body
+{
+    background-color: #F1F1F2;
+    font-family: 'Lato', sans-serif !important;
+}
+
 .nav-stuff {
   z-index: 1;
 }
@@ -41,3 +47,65 @@ div.modal-backdrop {
    display: none;
 }
 
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+}
+#footer {
+  font-size: 13px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  opacity: 0.4;
+}
+
+/* Heart
+-------------------------------------------------- */
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 7.25px;
+    /*top: 0;*/
+    bottom: 2px;
+    width: 7.25px;
+    height: 12px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}

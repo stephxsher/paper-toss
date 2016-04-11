@@ -34,4 +34,9 @@ class User < ActiveRecord::Base
   has_one :company, through: :location
 
   has_many :conversations, :foreign_key => :sender_id
+
+
+  def name_w_initial
+    "#{self.first_name} #{self.last_name.first}"
+  end
 end
