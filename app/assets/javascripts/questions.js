@@ -7,7 +7,6 @@ var ready = function () {
         var recipient_id = $(this).data('rip');
         window.setTimeout(function() {
         $.post("/questions", { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
-            // chatBox.chatWith(data.conversation_id);
         });
     }, 1500);
         

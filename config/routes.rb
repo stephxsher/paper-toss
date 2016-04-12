@@ -11,20 +11,19 @@ Rails.application.routes.draw do
     end
   end
 
-   devise_for :users
+  devise_for :users
 
   resources :conversations do
     resources :messages
   end
 
   resources :questions
-
-  # root 'pages#home'
   
   resources :companies do
     resources :locations
   end
 
+  get 'admin/:id', to: 'admins#show', as: :admin
   get 'users/sign_in', to: 'devise/sessions#new', as: :sign_in
   get 'users/:id' => 'users#show', as: :user
   get 'users/sign_up' => 'devise/registrations#new', as: :sign_up

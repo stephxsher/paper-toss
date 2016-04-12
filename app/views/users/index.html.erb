@@ -59,18 +59,18 @@ S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715
 
 <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation hidden",
             "data-sid" => current_user.id, "data-rip" => @match.id %>
-</td>
+
 
 <div class="container">
 <div class="row"></div>
-<div class="col-xs-8 col-sm-8 col-md-8"></div>
-<div id="match_info" class="col-xs-4 col-sm-4 col-md-4">You're chatting with:<br><%=@match.name_w_initial%></div>
+<div class="text-center col-xs-12 col-sm-12 col-md-12">
+  <h1 id="match_info">You're chatting with <%=@match.name_w_initial%>. <%=user_message(@match)%></h1>
+</div>
 <div class="row">
-<div class="col-sm-8 col-md-8"></div>
-<div class="offset3 col-xs-12 col-sm-4 col-md-4">
+<div class="offset3 col-xs-12 col-sm-12 col-md-12">
 <%= link_to "Toss Question", "#", class: "btn btn-block btn-primary btn-lg throw-question",
             "data-sid" => current_user.id, "data-rip" => @match.id %>
-</td>
+
 </div>
 </div>
 </div>

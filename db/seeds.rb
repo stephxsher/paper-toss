@@ -7,8 +7,8 @@ User.destroy_all
 Question.destroy_all
 
 nami = User.create(first_name: "Nami", last_name: "S", email: "ns@example.com", password: "funfunfun")
-shirley = User.create(first_name: "Shirley", last_name: "Berry", email: "sb@example.com", password: "funfunfun")
-liz = User.create(first_name: "Liz", last_name: "Kalina", email: "liz.kalina@gmail.com", password: "funfunfun")
+shirley = User.create(first_name: "Shirley", last_name: "Berry", email: "sb@example.com", password: "funfunfun", admin:true)
+liz = User.create(first_name: "Liz", last_name: "Kalina", email: "liz.kalina@gmail.com", password: "funfunfun", admin:true)
 holly = User.create(first_name: "Holly", last_name: "Peck", email: "hp@example.com", password: "funfunfun")
 greta = User.create(first_name: "Greta", last_name: "Moseson", email: "gm@example.com", password: "funfunfun")
 steph = User.create(first_name: "Steph", last_name: "Goob", email: "ssgoob@example.com", password: "funfunfun")

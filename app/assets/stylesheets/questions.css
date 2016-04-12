@@ -3,11 +3,11 @@
 }
 
 .btn.throw-question {
-    /*position: fixed;*/
-    bottom: 70px;
-    /*width: 40%;*/
+    position: fixed !important;
+    bottom: 60px !important;
     height: 50px;
     display: hidden;
     font-size: 24px;
-    /*padding-top: 6px;*/
+    font-family: 'Lato', sans-serif !important;
+    padding-top: 6px;
 }
