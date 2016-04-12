@@ -1,0 +1,44 @@
+<div class="container">
+<div class="row">
+  <!-- Not implemented on tutorial -->
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div style="height: 100%; width: 100%; overflow-y: auto;">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Who you've chatted with...</div>
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Department</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @users.each_with_index do |user, index| %>
+              <tr>
+                <td><%= index +=1 %></td>
+                <td><%= user.name_w_initial %>.</td>
+                <td><%= user.location.name %></td>
+                <td><%= user.department %></td>
+                <td>
+                  <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+                              "data-sid" => current_user.id, "data-rip" => user.id %>
+                </td>
+              </tr>
+          <% end %>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <hr>
+
+  </div>
+
+</div>
+</div>

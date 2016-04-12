@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'users/:user_id/conversations', to: 'users#conversations', as: :user_conversations
+
   resources :conversations do
     resources :messages
   end

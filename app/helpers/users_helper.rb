@@ -5,6 +5,9 @@ module UsersHelper
     else
       "who works from our #{user.location.name} office in #{user.department}."
     end
+  end
 
+  def conversation_interlocutor(conversation)
+    conversation.recipient == current_user ? conversation.sender : conversation.recipient
   end
 end

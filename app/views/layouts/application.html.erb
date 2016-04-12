@@ -42,7 +42,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">PaperToss</a>
+      <a class="navbar-brand" href="/">PaperToss</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -51,7 +51,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= "Hello, #{current_user.first_name}" %><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Your Profile</a></li>
-            <li><a href="#">Conversations</a></li>
+            <li><a href="<%= user_conversations_path(current_user.id) %>">Conversations</a></li>
             <% if current_user.admin? %>
               <li><a href="/admin/<%= current_user.id %>">Admin Console</a></li>
             <% end %>

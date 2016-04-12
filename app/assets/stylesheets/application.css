@@ -47,6 +47,10 @@ div.modal-backdrop {
    display: none;
 }
 
+.navbar-brand{
+  font-family: 'Lato', sans-serif !important;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
 
   def show
-    binding.pry
+    # need to build out admin view!
   end
 
 end
