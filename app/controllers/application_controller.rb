@@ -12,10 +12,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name]
   end
 
-  # private
-
-  # def set_time_zone(&block)
-  #   Time.use_zone(current_user.time_zone, &block)
-  # end
-
 end

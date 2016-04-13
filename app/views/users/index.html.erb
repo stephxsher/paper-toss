@@ -68,7 +68,7 @@ S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715
 </div>
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-12">
-<%= link_to "Toss Question", "#", class: "btn btn-lg throw-question",
+<%= link_to "Toss a Question", "#", class: "btn btn-lg throw-question",
             "data-sid" => current_user.id, "data-rip" => @match.id %>
 
 </div>
@@ -86,7 +86,7 @@ S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <h1>Welcome, <%= current_user.first_name %>! <br> You're paired with <%= @convo.recipient.name_w_initial %>.</h2>
+        <h1>Welcome, <%= current_user.first_name %>! <br> You're paired with <%= @match.name_w_initial %>.</h2>
       </div>
     </div>
 

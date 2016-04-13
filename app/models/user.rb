@@ -39,4 +39,49 @@ class User < ActiveRecord::Base
   def name_w_initial
     "#{self.first_name} #{self.last_name.first}"
   end
+
+  def coworkers
+    User.joins(:location).joins(:company).where('companies.id = ?', self.company.id)
+  end
+
+  def currently_available?
+    if Conversation.involving(self).present?
+      start_of_last_convo = Conversation.involving(self).order("created_at DESC").last.created_at
+      (start_of_last_convo - Time.now).hours > self.company.match_frequency
+    else
+      true 
+    end
+  end
+
+  def possible_partners
+      self.coworkers.select do |coworker| 
+        coworker.currently_available? && Conversation.between(coworker.id,self.id).count == 0
+      end
+  end
+
+  def best_match
+    #if admin paired, return as first match
+    if self.conversations.where(admin_pair:true).present?
+      return self.conversations.where(admin_pair:true)
+    end
+
+    #return user that is best match
+    self.possible_partners.max_by do |partner|
+      self.score(partner)
+    end 
+  end 
+
+
+  def score(match)
+    total = 0
+
+    self.department != match.department ? total += 3 : total += 1
+    self.location != match.location ? total += 4 : 0
+    self.location == "remote" || match.location == "remote" ? total += 5 : 0
+    
+    total
+  end
+
+ 
+
 end
