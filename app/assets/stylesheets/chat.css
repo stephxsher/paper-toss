@@ -1,15 +1,9 @@
-/**
- * GMAIL Like chat css
- * CREDITS: http://css-tricks.com/replicating-google-hangouts-chat/
- *
- */
 
 .chatbox {
-    /*position: fixed !important;*/
-    /*position: expression("absolute");*/
+    /*position: expression("relative");*/
     width: 100%;
-    display: none;
-    bottom: 450px;
+    /*bottom: 80px;*/
+    display: block;
     /*margin-left: 60px;*/
 }
 
@@ -17,7 +11,7 @@
     background: #666;
     color: white;
     padding: 0.5rem;
-    /*overflow: hidden;*/
+    overflow: hidden;
     display: none;
     border-right: 1px solid rgba(85, 85, 85, 0.87);
     border-left: 1px solid rgba(85, 85, 85, 0.87);
@@ -39,13 +33,15 @@
 .chatboxcontent {
     font-family: arial, sans-serif;
     height: 200px;
-    width: 100%;
-    /*overflow-y: auto;*/
+    margin: 0 auto; 
+    width: 95%; 
+    overflow-y: auto;
+    display:block;
     padding: 7px;
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
     border-bottom: 1px solid #eeeeee;
-    background: #e5e5e5;
     line-height: 1.3em;
     list-style: none;
     border-radius: 15px 15px 0px 0px;
@@ -111,12 +107,16 @@
 .chatboxmessagecontent {
     background: white;
     padding: 10px;
+    margin: 0 auto; 
+    width: 100%; 
     border-radius: 2px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .chatboxmessagecontent p {
-    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
     margin: 0 0 0.2rem 0;
     -ms-word-break: break-all;
 
@@ -129,12 +129,15 @@
 }
 
 .chatboxmessagecontent time {
-    font-size: 9px;
+    font-size: 12px;
     color: #ccc;
 }
 
 .chatboxinput {
     padding: 5px;
+    margin: 0 auto; 
+    width: 95%; 
+    display: block;
     background-color: #ffffff;
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
@@ -142,9 +145,9 @@
 }
 
 .chatboxtextarea {
-    width: 95%;
+    width: 100%;
     height: 60px;
-    padding: 3px 0pt 3px 3px;
+    padding: 3px 3pt 3px 3px;
     border: 1px solid #eeeeee;
     margin: 1px;
     overflow: hidden;

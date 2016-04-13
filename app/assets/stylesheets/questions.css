@@ -1,13 +1,66 @@
 .question-text {
-  background-color: pink;
+  height: 70px;
 }
 
-.btn.throw-question {
+.question-text.chatboxmessagecontent p {
+  padding: 15px;
+  font-size: 22px !important;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.throw-question {
     position: fixed !important;
-    bottom: 60px !important;
+    bottom: 45px;
+    margin: 0 auto; 
+    width: 95%;
     height: 50px;
-    display: hidden;
     font-size: 24px;
     font-family: 'Lato', sans-serif !important;
+    font-weight: 400 !important;
     padding-top: 6px;
+    color: #FDFFFC; 
+    background-color: #E71D36; 
+    border-color: #C72235; 
+}
+ 
+.throw-question:hover, 
+.throw-question:focus, 
+.throw-question:active, 
+.throw-question.active, 
+.open .dropdown-toggle.throw-question { 
+  color: #FDFFFC; 
+  background-color: #F21D36; 
+  border-color: #C72235; 
+} 
+ 
+.throw-question:active, 
+.throw-question.active, 
+.open .dropdown-toggle.throw-question { 
+  background-image: none; 
+} 
+ 
+.throw-question.disabled, 
+.throw-question[disabled], 
+fieldset[disabled] .throw-question, 
+.throw-question.disabled:hover, 
+.throw-question[disabled]:hover, 
+fieldset[disabled] .throw-question:hover, 
+.throw-question.disabled:focus, 
+.throw-question[disabled]:focus, 
+fieldset[disabled] .throw-question:focus, 
+.throw-question.disabled:active, 
+.throw-question[disabled]:active, 
+fieldset[disabled] .throw-question:active, 
+.throw-question.disabled.active, 
+.throw-question[disabled].active, 
+fieldset[disabled] .throw-question.active { 
+  background-color: #E71D36; 
+  border-color: #C72235; 
+} 
+ 
+.throw-question .badge { 
+  color: #E71D36; 
+  background-color: #FDFFFC; 
 }
