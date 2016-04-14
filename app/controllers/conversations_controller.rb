@@ -4,12 +4,23 @@ class ConversationsController < ApplicationController
   layout false
 
   def create
-    if Conversation.between(params[:sender_id],params[:recipient_id]).present?
-      @conversation = Conversation.between(params[:sender_id],params[:recipient_id]).first
+    if params[:conversation].present?
+      if Conversation.between(params[:conversation][:sender_id],params[:conversation][:recipient_id]).present?
+        @conversation = Conversation.between(params[:conversation][:sender_id],params[:conversation][:recipient_id]).first
+      else
+        @conversation = Conversation.create!(sender_id:params[:conversation][:sender_id],recipient_id:params[:conversation][:recipient_id])
+      end
+      flash[:notice] = "Pair successfully submitted"
+      redirect_to admin_path(current_user)
     else
-      @conversation = Conversation.create!(conversation_params)
+      if Conversation.between(params[:sender_id],params[:recipient_id]).present?
+        @conversation = Conversation.between(params[:sender_id],params[:recipient_id]).first
+      else
+        @conversation = Conversation.create!(conversation_params)
+      end
+      render json: { conversation_id: @conversation.id }
     end
-    render json: { conversation_id: @conversation.id }
+
   end
 
   def show

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'admin/:id', to: 'admins#show', as: :admin
   get 'users/sign_in', to: 'devise/sessions#new', as: :sign_in
   get 'users/:id' => 'users#show', as: :user
+  post 'users' => 'users#create'
   get 'users/sign_up' => 'devise/registrations#new', as: :sign_up
   get 'users/sign_out' => 'devise/sessions#destroy', as: :sign_out
 

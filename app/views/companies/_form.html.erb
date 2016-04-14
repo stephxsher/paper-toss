@@ -1,9 +1,13 @@
-<%= form_for company do |f| %>
-  <p><%= f.label :name %>
-  <%= f.text_field :name %></p>
+<%= form_for @company do |f| %>
+  <div><%= f.label :name %>
+  <%= f.text_field :name %></div>
+  <div><%= f.label :match_frequency %></div>
+  <div>every <%= f.text_field :match_frequency %> hours</div>
+  <%= f.label :name, "Locations" %>
+  <ul>
   <%= f.fields_for :locations do |form| %>
-    <%= form.label :name, "Location Name" %>
-    <%= form.text_field :name %>
+    <li><%= form.text_field :name %></li>
   <% end %>
+  </ul>
   <p><%= f.submit %></p>
 <% end %>

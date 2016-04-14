@@ -35,4 +35,5 @@ class Conversation < ActiveRecord::Base
     self.recipient == user ? self.sender : self.recipient
   end
 
+
 end

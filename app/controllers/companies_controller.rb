@@ -14,7 +14,6 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @company = Company.new(company_params)
     if @company.save
       render @company
@@ -27,22 +26,20 @@ class CompaniesController < ApplicationController
     @company = set_company
   end
 
-  # def update
-  #   @company = set_company
-  #   if @company.save
-  #     render @company
-  #   else
-  #     render edit_company_path(@company)
-  #   end
-  # end
+  def update
+    company = set_company
+    company.update(company_params)
+    redirect_to admin_path(current_user)
+  end
 
   private
 
-  def company_params
-    params.require(:company).permit(:name, locations_attributes: [:name])
-  end
+    def company_params
+      params.require(:company).permit(:name, :match_frequency, locations_attributes: [:name,:id])
+    end
 
-  def set_company
-    Company.find(params[:id])
-  end
+    def set_company
+      Company.find(params[:id])
+    end
+
 end
