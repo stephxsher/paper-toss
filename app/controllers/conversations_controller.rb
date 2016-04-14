@@ -10,6 +10,7 @@ class ConversationsController < ApplicationController
       else
         @conversation = Conversation.create!(sender_id:params[:conversation][:sender_id],recipient_id:params[:conversation][:recipient_id])
       end
+      @conversation.admin_pair == true
       flash[:notice] = "Pair successfully submitted"
       redirect_to admin_path(current_user)
     else
