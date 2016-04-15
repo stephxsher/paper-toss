@@ -19,16 +19,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @conversations = Conversation.involving(current_user).order("created_at DESC")
-    @users = []
-    @conversations.each do |conversation|
-      sender = User.find(conversation.sender_id)
-      receiver = User.find(conversation.recipient_id)
-      if sender != current_user 
-       @users << sender
-      elsif receiver != current_user
-        @users << receiver
-      end
-    end
+    @users = @user.recent_conversations(@conversations)
     @users.take(3)
 
   end

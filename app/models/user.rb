@@ -85,4 +85,18 @@ class User < ActiveRecord::Base
     total
   end
 
+  def recent_conversations(conversations)
+    users = []
+    conversations.each do |conversation|
+      sender = User.find(conversation.sender_id)
+      receiver = User.find(conversation.recipient_id)
+      if sender != self
+       users << sender
+      elsif receiver != self
+        users << receiver
+      end
+    end
+    users
+  end
+
 end
