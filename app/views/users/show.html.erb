@@ -1,0 +1,31 @@
+<h2><%= @user.name_w_initial %></h2>
+
+<h4>Karma points: <%= @user.karma %> </h4>
+
+<h4> Recent conversations:</h4>
+  <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Department</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @users.each_with_index do |user, index| %>
+          <tr>
+            <td><%= index +=1 %></td>
+            <td><%= user.name_w_initial %>.</td>
+            <td><%= user.location.name %></td>
+            <td><%= user.department %></td>
+            <td>
+              <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
+            </td>
+          </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+
+
