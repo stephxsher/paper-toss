@@ -13,6 +13,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'admin/:id', to: 'admins#show', as: :admin
+  get 'users/sign_in', to: 'devise/sessions#new', as: :sign_in
+  get 'users/:id' => 'users#show', as: :user
+  post 'users' => 'users#create'
+  get 'users/sign_up' => 'devise/registrations#new', as: :sign_up
+  get 'users/sign_out' => 'devise/sessions#destroy', as: :sign_out
+
   get 'users/:user_id/conversations', to: 'users#conversations', as: :user_conversations
 
   resources :conversations do
@@ -25,12 +32,6 @@ Rails.application.routes.draw do
     resources :locations
   end
 
-  get 'admin/:id', to: 'admins#show', as: :admin
-  get 'users/sign_in', to: 'devise/sessions#new', as: :sign_in
-  get 'users/:id' => 'users#show', as: :user
-  post 'users' => 'users#create'
-  get 'users/sign_up' => 'devise/registrations#new', as: :sign_up
-  get 'users/sign_out' => 'devise/sessions#destroy', as: :sign_out
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

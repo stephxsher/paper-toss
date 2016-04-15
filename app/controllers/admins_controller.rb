@@ -4,8 +4,9 @@ class AdminsController < ApplicationController
     @company = set_company
     @coworkers = current_user.coworkers
     @conversation = Conversation.new
+    @question = Question.new
+    @custom_questions = Question.where(company_id:@company.id)
   end
-
 
   private
 

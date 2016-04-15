@@ -8,7 +8,7 @@
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default("0"), not null
+#  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
@@ -18,10 +18,11 @@
 #  first_name             :string
 #  last_name              :string
 #  hire_date              :datetime
-#  position               :string
+#  department             :string
 #  karma                  :integer
 #  location_id            :integer
 #  time_zone              :string
+#  admin                  :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -45,7 +46,7 @@ class User < ActiveRecord::Base
   end
 
   def coworkers
-    User.joins(:location).joins(:company).where('companies.id = ?', self.company.id)
+    User.joins(:company).where('companies.id = ?', self.company.id)
   end
 
   def possible_partners
@@ -66,7 +67,8 @@ class User < ActiveRecord::Base
   def best_match
     #if admin paired, return as first match
     if conversations.where(admin_pair:true).present?
-      return conversations.where(admin_pair:true)
+      binding.pry
+      return conversations.where(admin_pair:true).first
     end
 
     #return user that is best match

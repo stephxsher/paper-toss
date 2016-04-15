@@ -30,12 +30,12 @@ User.all.each do |user|
 end
 
 
-10.times do
-  convo = Conversation.create
-  convo.sender = User.all.sample
-  convo.recipient = (User.all - [convo.sender]).sample
-  convo.save
-end
+# 10.times do
+#   convo = Conversation.create
+#   convo.sender = User.all.sample
+#   convo.recipient = (User.all - [convo.sender]).sample
+#   convo.save
+# end
 
 # 20.times do
 #   convo = Conversation.all.sample
@@ -43,8 +43,8 @@ end
 #   convo.save
 # end
 
-personal = ["What is your dream weekend scenario?","What is your favorite place in the world?","What do you want for your next birthday gift? "]
-profesh = ["What motivates you at work?","What do you for your productivity at work?","What can help you to be more productive?"]
+personal = ["If you could meet anyone, who do you want to be and why?", "What do you do when you first get up in the morning?", "What relaxes you?", "What is your favorite movie?", "Who is your role model?", "What is your passion outside your career? ", "What is in your bucket list?", "Where were you when you were 19 years old?", "What is your dream weekend scenario?","What is your favorite place in the world?","What would you like for your next birthday gift?"]
+profesh = ["What is your favorite part of the day at work?", "What is your current project?", "What is one of your goals this week?", "What motivates you at work?","What helps you to be more productive?"]
 
 personal.each do |q|
   Question.create(subject:"personal",text:q)

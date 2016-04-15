@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: conversations
+#
+#  id           :integer          not null, primary key
+#  sender_id    :integer
+#  recipient_id :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  admin_pair   :boolean          default(FALSE)
+#
+
 class ConversationsController < ApplicationController
   before_filter :authenticate_user!
 
@@ -10,7 +22,8 @@ class ConversationsController < ApplicationController
       else
         @conversation = Conversation.create!(sender_id:params[:conversation][:sender_id],recipient_id:params[:conversation][:recipient_id])
       end
-      @conversation.admin_pair == true
+      @conversation.update(admin_pair:true)
+      # @conversation.save
       flash[:notice] = "Pair successfully submitted"
       redirect_to admin_path(current_user)
     else

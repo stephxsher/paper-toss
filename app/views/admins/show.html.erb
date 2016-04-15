@@ -1,25 +1,42 @@
 <div class="container">
 <div class="row">
-<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="col-xs-5 col-sm-5 col-md-5">
   <h3>Update Company Profile</h3>
   <%= render :partial => '/companies/form', company: @company %>
 </div>
-<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="col-xs-1 col-sm-1 col-md-1">
+</div>
+<div class="col-xs-5 col-sm-5 col-md-5">
   <div class="row">
   <h3>Set a Pair</h3>
- <%= form_for @conversation, url: conversations_path, method: :post do |f| %>
-  <%= f.collection_select(:sender_id, @coworkers, :id, :full_name, {:prompt => "Selection #1"}) %>
-  <%= f.collection_select(:recipient_id, @coworkers, :id, :full_name, {:prompt => "Selection #2"}) %>
-  <%= f.submit "Submit Pair" %>
+ <%= form_for @conversation, url: conversations_path, method: :post, :html => {:class => "form-group"} do |f| %>
+  <%= f.collection_select(:sender_id, @coworkers, :id, :full_name, {:prompt => "Selection #1"}, {:class => 'form-control'}) %>
+  <%= f.collection_select(:recipient_id, @coworkers, :id, :full_name, {:prompt => "Selection #2"}, {:class=>'form-control'}) %>
+  <%= f.submit "Submit Pair", class: "btn btn-secondary btn-md btn-block" %>
 <% end %>
     <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 </div>
 <div class="row">
-<h3>Add or Update Questions</h3>
+<h3>Add a Custom Question</h3>
+  <%= form_for @question, url: questions_path, method: :post do |f| %>
+    <%= f.text_field :text, class: "form-control"  %>
+    <%= f.label :personal, class: 'radio-inline' %>
+    <%= f.radio_button :subject, :personal%>
+    <%= f.label :professional, class: 'radio-inline' %>
+    <%= f.radio_button :subject, :professional %>
+    <%= f.submit "Add Question", class: "btn btn-secondary btn-md btn-block" %>
+  <% end %>
+  <br>
+<h3>Edit Custom Questions</h3>
+  <% @custom_questions.each do |question| %>
+    <%= form_for question do |f| %>   
+      <p><%= f.text_field :text, class: "form-control"  %>
+      <%= f.submit "Update", class: "btn btn-secondary btn-sm btn-block"%></p>
+    <% end %>
+  <% end %>
 </div>
-
 </div>
 </div>
 </div>

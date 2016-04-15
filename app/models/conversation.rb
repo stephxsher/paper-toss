@@ -7,6 +7,7 @@
 #  recipient_id :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  admin_pair   :boolean          default(FALSE)
 #
 
 class Conversation < ActiveRecord::Base
@@ -30,10 +31,8 @@ class Conversation < ActiveRecord::Base
     where("(conversations.sender_id = ? AND conversations.recipient_id =?) OR (conversations.sender_id = ? AND conversations.recipient_id =?)", sender_id,recipient_id, recipient_id, sender_id)
   end
 
-
   def conversation_partner(user)
     self.recipient == user ? self.sender : self.recipient
   end
-
 
 end

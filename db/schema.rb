@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413043401) do
+ActiveRecord::Schema.define(version: 20160415014339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,6 @@ ActiveRecord::Schema.define(version: 20160413043401) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.integer  "match_frequency", default: 168
-  end
-
-  create_table "company_admins", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "conversation_questions", force: :cascade do |t|
@@ -67,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160413043401) do
     t.string   "subject"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "company_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,7 +82,7 @@ ActiveRecord::Schema.define(version: 20160413043401) do
     t.datetime "hire_date"
     t.string   "department"
     t.integer  "karma"
-    t.integer  "location_id"
+    t.integer  "location_id",            default: 1
     t.string   "time_zone"
     t.boolean  "admin",                  default: false
   end

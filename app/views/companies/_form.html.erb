@@ -1,13 +1,14 @@
-<%= form_for @company do |f| %>
-  <div><%= f.label :name %>
-  <%= f.text_field :name %></div>
-  <div><%= f.label :match_frequency %></div>
+<%= form_for @company, :html => {:class => "form-group"} do |f| %>
+  <div><%= f.label :name, "Company Name" %>
+  <%= f.text_field :name, class: "form-control" %></div>
+  <br>
+  <div><%= f.label :match_frequency, "Match Frequency" %></div>
   <div>every <%= f.text_field :match_frequency %> hours</div>
+  <br>
   <%= f.label :name, "Locations" %>
-  <ul>
   <%= f.fields_for :locations do |form| %>
-    <li><%= form.text_field :name %></li>
+    <%= form.text_field :name, class: "form-control" %>
   <% end %>
-  </ul>
-  <p><%= f.submit %></p>
+  <br>
+  <p><%= f.submit "Update Company", class: "btn btn-secondary btn-lg btn-block" %></p>
 <% end %>

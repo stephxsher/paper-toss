@@ -53,42 +53,36 @@ S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715
 
 </div>
 
-
-
-
-
-<%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation hidden",
-            "data-sid" => current_user.id, "data-rip" => @match.id %>
-
-
 <div class="container">
-<div class="row"></div>
-<div class="text-center col-xs-12 col-sm-12 col-md-12">
-  <h1 id="match_info">You're chatting with <%=@match.name_w_initial%>. <%=user_message(@match)%></h1>
-</div>
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-12">
-<%= link_to "Toss a Question", "#", class: "btn btn-lg throw-question",
-            "data-sid" => current_user.id, "data-rip" => @match.id %>
-
-</div>
-</div>
+  <div class="row">
+    <div class="text-center col-xs-12 col-sm-12 col-md-12">
+      <h1 id="match_info">You're chatting with <%=@match.name_w_initial%>. <%=user_message(@match)%></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
+      <%= link_to "Toss a Question", "#", class: "btn btn-lg throw-question", "data-sid" => current_user.id, "data-rip" => @match.id %>
+    </div>
+  </div>
 </div>
 
 
 <!-- Trigger the modal with a button -->
-<button type="button" class="pull-right btn btn-info btn-lg hidden" data-toggle="modal" data-target="#myModal">About <%= @match.first_name %></button>
+<button type="button" class="btn hidden" data-toggle="modal" data-target="#myModal"></button>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal" class="modal fade" role="dialog"> 
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <h1>Welcome, <%= current_user.first_name %>! <br> You're paired with <%= @match.name_w_initial %>.</h2>
+        <h1>Welcome, <%= current_user.first_name %>! <br> You're paired with <%= @match.name_w_initial %>.</h1>
       </div>
     </div>
 
   </div>
 </div>
+
+<%= link_to "Send Message", "#", class: "btn start-conversation hidden",
+            "data-sid" => current_user.id, "data-rip" => @match.id %>
