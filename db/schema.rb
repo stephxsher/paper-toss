@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 20160415014339) do
     t.integer  "match_frequency", default: 168
   end
 
+  create_table "company_admins", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "conversation_questions", force: :cascade do |t|
     t.integer  "conversation_id"
     t.integer  "question_id"

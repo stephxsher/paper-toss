@@ -50,7 +50,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= "Hello, #{current_user.first_name}" %><span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Your Profile</a></li>
+            <li><a href="<%= user_path(current_user) %>">Your Profile</a></li>
             <li><a href="<%= user_conversations_path(current_user.id) %>">Conversations</a></li>
             <% if current_user.admin? %>
               <li><a href="/admin/<%= current_user.id %>">Admin Console</a></li>

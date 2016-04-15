@@ -43,6 +43,15 @@ class UsersController < ApplicationController
       @convo = current_user.conversations.build(recipient_id:@match.id)
   end
 
+  def show
+    @user = current_user
+    @conversations = Conversation.involving(current_user).order("created_at DESC")
+    @users = @user.recent_conversations(@conversations)
+    @users.take(3)
+
+  end
+
+
   def conversations
       @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
       @conversations = Conversation.involving(current_user).order("created_at DESC")
