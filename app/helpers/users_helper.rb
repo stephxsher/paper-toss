@@ -27,7 +27,7 @@
 
 module UsersHelper
   def user_message(user)
-    if user.location == "remote"
+    if user.location.name == "remote" || user.location.name == "Remote"
       "who works remotely on our #{user.department} team."
     else
       "who works from our #{user.location.name} office in #{user.department}."

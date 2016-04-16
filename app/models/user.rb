@@ -56,19 +56,19 @@ class User < ActiveRecord::Base
   end
 
   def currently_available?
-    if Conversation.involving(self).present?
+    if Conversation.involving(self).where(admin_pair:false).present?
       start_of_last_convo = Conversation.involving(self).order("created_at DESC").last.created_at
-      (start_of_last_convo - Time.now).hours > company.match_frequency
+      ((start_of_last_convo - Time.now).hours > company.match_frequency) ? true : false
     else
-      true 
+      return true
     end
   end
 
   def best_match
     #if admin paired, return as first match
-    if conversations.where(admin_pair:true).present?
-      binding.pry
-      return conversations.where(admin_pair:true).first
+    if Conversation.involving(self).where(admin_pair:true).present?
+      convo = Conversation.involving(self).where(admin_pair:true).first
+      return convo.conversation_partner(self)
     end
 
     #return user that is best match
@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
 
     self.department != match.department ? total += 3 : total += 1
     self.location != match.location ? total += 4 : 0
-    self.location == "remote" || match.location == "remote" ? total += 5 : 0
+    self.location == "Remote" || match.location == "Remote" ? total += 5 : 0
     
     total
   end
