@@ -23,7 +23,6 @@ class ConversationsController < ApplicationController
         @conversation = Conversation.create!(sender_id:params[:conversation][:sender_id],recipient_id:params[:conversation][:recipient_id])
       end
       @conversation.update(admin_pair:true)
-      # @conversation.save
       flash[:notice] = "Pair successfully submitted"
       redirect_to admin_path(current_user)
     else
