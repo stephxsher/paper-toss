@@ -4,6 +4,13 @@ Papertoss, inspired by the classic 90s game, uses technology to develop a unifie
 
 Possible add-ons and improvements include a Slack integration or web-browser plug-in to maximize productivity, a video-chatting feature to communicate non-verbal cues, and gamification to encourage and reward employee participation.
 
+##Employee Portal
+####Our pairing formula randomizes conversations across departments and office locations
+![Chat Area](http://g.recordit.co/aXQDW7OIvE.gif)
+
+##Admin Console
+####Admins can set match frequency, chat pairs and add custom questions for their company
+![Admin Area](http://g.recordit.co/KU1EUYXh2c.gif)
 
 #Collaborators 
 
@@ -25,13 +32,8 @@ soyongnam@gmail.com
 Stephanie Sher
 stephaniesher18@gmail.com
 
-
-
-
-
-
 #Credits
 
-Real-time chat app based on: https://github.com/Joseph-N/chatty
+Real-time chat component based on [Chatty](https://github.com/Joseph-N/chatty)
 
-Paper Airplane Animation (CSS): http://codepen.io/ItsJonQ/pen/yvfDF
+[Paper Airplane Animation (CSS)](http://codepen.io/ItsJonQ/pen/yvfDF)
